@@ -1,0 +1,18 @@
+name: manual
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "env"
+        required: true
+        type: choice
+        options:
+          - dev
+          - stg
+          - prod
+jobs:
+  show-env:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo ${{ inputs.env }}
