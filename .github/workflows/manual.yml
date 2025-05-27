@@ -1,4 +1,5 @@
 name: manual
+run-name: "manual year: ${{ inputs.year }} month: ${{ inputs.month }} day: ${{ inputs.day }}"
 on:
   workflow_dispatch:
     inputs:
