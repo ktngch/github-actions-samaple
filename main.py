@@ -1,6 +1,14 @@
 import pendulum
+import json
 
 now = pendulum.now()
 prev_month = now.subtract(months=1)
 
-print(f"previous month -> {prev_month.year}/{prev_month.month}")
+data = {
+    "year": prev_month.year,
+    "month": prev_month.month,
+    "day": prev_month.day
+}
+
+with open("report.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
