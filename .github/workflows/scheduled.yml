@@ -1,21 +1,7 @@
 name: manual
 on:
-  workflow_dispatch:
-    inputs:
-      year:
-        description: "year"
-        required: true
-        type: string
-        default: "2025"
-      month:
-        description: "month"
-        required: true
-        type: string
-      day:
-        description: "month"
-        required: true
-        type: string
-        default: "*"
+  schedule:
+    - cron: "30 8 28 * *" 
 
 jobs:
   show-env:
@@ -32,7 +18,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip3 install -r requirements.txt
-      - run: python3 manual.py -y ${{ inputs.year }} -m ${{ inputs.month }} -d ${{ inputs.day }}
+      - run: python3 scheduled.py
       - uses: actions/upload-artifact@v4
         with:
           name: report

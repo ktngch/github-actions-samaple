@@ -10,5 +10,7 @@ data = {
     "day": prev_month.day
 }
 
+print(data)
+
 with open("report.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
