@@ -4,12 +4,6 @@ on:
     - cron: "30 8 28 * *" 
 
 jobs:
-  show-env:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo ${{ inputs.env }}
-
   print-prev-month:
     runs-on: ubuntu-latest
     steps:
