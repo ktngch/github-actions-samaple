@@ -1,7 +1,7 @@
 name: scheduled
 on:
   schedule:
-    - cron: "55 23 27 * *"
+    - cron: "15 0 28 * *"
 
 jobs:
   print-prev-month:
