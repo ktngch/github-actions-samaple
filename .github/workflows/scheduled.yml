@@ -1,20 +1,11 @@
 name: scheduled
 on:
   schedule:
-    - cron: "15 0 28 * *"
+    - cron: "0 1 * * *"
 
 jobs:
-  print-prev-month:
+  hello:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: pip3 install -r requirements.txt
-      - run: python3 scheduled.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: report
-          path: |
-            report.json
+      - run: echo "hello"
