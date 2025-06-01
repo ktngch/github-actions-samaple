@@ -1,0 +1,14 @@
+name: release
+on:
+  pull_request:
+    branches:
+      - release
+    types:
+      - closed
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - run: echo "release"
